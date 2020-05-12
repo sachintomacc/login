@@ -1,0 +1,62 @@
+{% load static %}
+
+<html>
+
+
+<head>
+<meta charset="UTF-8">
+
+<!-- <title>Home</title> -->
+{% block title%}
+{% endblock title%}
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+</head>
+
+
+<body style="background-color: lightblue">
+
+
+<div class="container">
+
+    <ul class="breadcrumb my-4">
+        <li class="breadcrumb-item active">Boards</li>
+        <li class="breadcrumb-item ">Boards 123</li>
+
+    </ul>
+
+    <table class="table">
+            <thead class="thead-inverse">
+              <tr>
+                <th>Board</th>
+                <th>Posts</th>
+                <th>Topics</th>
+                <th>Last Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for user in users %}
+                <tr>
+                  <td>
+                    {{ user.username }}
+                    <small class="text-muted d-block">{{ user.age }}</small>
+                  </td>
+                  <td class="align-middle">0</td>
+                  <td class="align-middle">0</td>
+                  <td></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+
+</div>
+
+{% block content %}
+{% endblock content %}
+
+
+</body>
+
+</html>
